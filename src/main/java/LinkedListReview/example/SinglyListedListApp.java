@@ -14,7 +14,14 @@ public class SinglyListedListApp {
         myList.printNodes();
 
         myList.deleteById(5);
+
         System.out.println();
+
         myList.printNodes();
+
+        System.out.println();
+
+        System.out.println("index of 8: " + myList.indexOf(8));
+
     }
 }
