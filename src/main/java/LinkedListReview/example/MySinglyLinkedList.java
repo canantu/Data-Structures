@@ -77,4 +77,16 @@ public class MySinglyLinkedList {
         }
         return -1;
     }
+
+    // add an item to the beginning
+    void addFirst(int id){
+        Node node = new Node(id);
+        if (isEmpty()){
+            head = tail = node;
+        }else{
+            node.next = head;
+            head = node;
+        }
+        size++;
+    }
 }
