@@ -20,12 +20,13 @@ public class ExprBalanceCheck {
             if (ch != '(' && ch != '{' && ch != '[' && ch != ']' && ch != '}' && ch != ')'){
                 continue;
             }
+            // push opening symbols
             if (ch == '(' || ch == '{' || ch == '['){
                 myStack.push(ch);
                 continue;
             }
             if (myStack.isEmpty()){ return false;}
-
+            // if closing symbol, look for matching and remove it
             switch (ch){
                 case ')':
                     if (myStack.pop() != '(') { return false; }
