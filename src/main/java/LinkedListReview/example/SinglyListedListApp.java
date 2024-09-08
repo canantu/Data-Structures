@@ -13,6 +13,16 @@ public class SinglyListedListApp {
 
         myList.printNodes();
 
+        System.out.println();
+
+        myList.removeKthFromLast(2);
+        myList.printNodes();
+
+        System.out.println();
+
+        myList.removeKthFromLast(10);
+        myList.printNodes();
+
         myList.deleteById(5);
 
         System.out.println();
@@ -22,6 +32,7 @@ public class SinglyListedListApp {
         System.out.println();
 
         System.out.println("index of 8: " + myList.indexOf(8));
+
 
     }
 }

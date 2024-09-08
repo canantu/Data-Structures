@@ -89,4 +89,86 @@ public class MySinglyLinkedList {
         }
         size++;
     }
+
+    public int getKthFromLast(int k){
+        // create two pointers
+        Node ptr1 = head;
+        Node ptr2 = head;
+
+        // move ptr2 k-1 times
+        for (int i = 0; i < k-1; i++) {
+            ptr2 = ptr2.next;
+        }
+
+        // move both pointers until ptr2 hits the last element
+        while(ptr2 != null){
+            ptr1 = ptr1.next;
+            ptr2 = ptr2.next;
+        }
+
+        return ptr1.id;
+    }
+
+    public int removeKthFromLast(int k){
+        // create two pointers
+        Node ptr1 = head;
+        Node ptr2 = head;
+        Node prev = null;
+
+        // move ptr2 k-1 times
+        for (int i = 0; i < k-1; i++) {
+            ptr2 = ptr2.next;
+        }
+        // move both pointers until ptr2 hits the last element
+        while(ptr2.next != null){
+            prev = ptr1;
+            ptr1 = ptr1.next;
+            ptr2 = ptr2.next;
+
+        }
+        // delete operation
+        if (ptr1 == head){
+            head = ptr1.next;
+            ptr1.next = null;
+
+
+        }else if(ptr1 == tail){
+            tail = prev;
+            prev.next = null;
+
+        }else{
+            prev.next = ptr1.next;
+            ptr1.next = null;
+
+        }
+        size--;
+        return ptr1.id;
+    }
+
+
+    public void removeKthFromLastSecondSolution(int k){
+        Node ptr1 = head;
+        Node ptr2 = head;
+
+        for (int i = 0; i < k-1; i++) {
+            ptr2 = ptr2.next;
+
+            if (ptr2.next == null){
+                System.out.println("Array is less than k elements");
+            }else if (ptr2.next == null){
+                head = ptr1.next;
+                ptr1.next = null;
+                return;
+            }
+        }
+
+        while(ptr2.next.next != null){
+            ptr2 = ptr2.next;
+            ptr1 = ptr1.next;
+        }
+        ptr1.next = ptr2.next.next;
+        ptr1 = ptr1.next;
+        ptr1 = null;
+
+    }
 }
