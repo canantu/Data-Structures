@@ -33,3 +33,8 @@ public class Solution {
         return false;
     }
 }
+
+// return where cycle starts, node
+// count the number of elements in the cycle
+// which element is not in the cycle(number of elements in the tail, and in the cycle)
+
